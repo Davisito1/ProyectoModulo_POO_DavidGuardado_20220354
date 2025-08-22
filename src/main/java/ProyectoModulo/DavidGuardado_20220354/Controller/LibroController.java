@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,8 +79,15 @@ public class LibroController {
             else{
                 return ResponseEntity.status(404).body(Map.of(
                         "status", "error",
+                        "message", "Libro no encontrado"
                 ));
             }
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body(Map.of(
+                    "status", "error",
+                    "message", "Error al eliminar libro",
+                    "timestamp", Instant.now().toString()
+            ));
         }
     }
 }

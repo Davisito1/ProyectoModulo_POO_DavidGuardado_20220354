@@ -78,7 +78,7 @@ public class LibroService {
                 return false;
             }
         } catch (EmptyResultDataAccessException e) {
-            throw new EmptyResultDataAccessException();
+            throw new RuntimeException("No se encontro libro con ID " + id + " para eliminar");
         }
     }
 
