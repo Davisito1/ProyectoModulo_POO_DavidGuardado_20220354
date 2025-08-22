@@ -82,6 +82,7 @@ public class LibroService {
         }
     }
 
+    //Metodo para convertir los datos de DTO a Entity
     private LibroEntity convertirAEntity(LibroDTO dto) {
         LibroEntity entity = new LibroEntity();
         entity.setId(dto.getId());
@@ -93,6 +94,7 @@ public class LibroService {
         return entity;
     }
 
+    //Metodo para convertir los datos de Entity a DTO
     private LibroDTO convertirADTO(LibroEntity entity) {
         LibroDTO dto = new LibroDTO();
         dto.setId(entity.getId());
