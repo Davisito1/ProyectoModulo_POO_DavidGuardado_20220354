@@ -24,7 +24,7 @@ public class LibroEntity {
     @Column(name = "ISBN", nullable = false, length = 200)
     private String isbn;
     @Column(name = "AÑO_PUBLICACION")
-    private Long anio;
+    private Long año_publicacion;
     @Column(name = "GENERO", length = 50)
     private String genero;
     @Column(name = "AUTOR_ID")

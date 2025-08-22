@@ -55,7 +55,7 @@ public class LibroService {
             existente.setAutor_id(data.getAutor_id());
             existente.setTitulo(data.getTitulo());
             existente.setIsbn(data.getIsbn());
-            existente.setAnio(data.getAnio());
+            existente.setAño_publicacion(data.getAño_publicacion());
 
             LibroEntity actualizado = repo.save(existente);
             return convertirADTO(actualizado);
@@ -88,7 +88,7 @@ public class LibroService {
         entity.setId(dto.getId());
         entity.setTitulo(dto.getTitulo());
         entity.setIsbn(dto.getIsbn());
-        entity.setAnio(dto.getAnio());
+        entity.setAño_publicacion(dto.getAño_publicacion());
         entity.setGenero(dto.getGenero());
         entity.setAutor_id(dto.getAutor_id());
         return entity;
@@ -100,7 +100,7 @@ public class LibroService {
         dto.setId(entity.getId());
         dto.setTitulo(entity.getTitulo());
         dto.setIsbn(entity.getIsbn());
-        dto.setAnio(entity.getAnio());
+        dto.setAño_publicacion(entity.getAño_publicacion());
         dto.setGenero(entity.getGenero());
         dto.setAutor_id(entity.getAutor_id());
         return dto;

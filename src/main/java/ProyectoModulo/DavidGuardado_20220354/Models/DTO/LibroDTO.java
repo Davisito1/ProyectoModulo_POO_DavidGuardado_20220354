@@ -17,7 +17,7 @@ public class LibroDTO {
     private String titulo;
     @NotBlank(message = "ISBN obligatorio")
     private String isbn;
-    private Long anio;
+    private Long año_publicacion;
     private String genero;
     private Long autor_id;
 }
