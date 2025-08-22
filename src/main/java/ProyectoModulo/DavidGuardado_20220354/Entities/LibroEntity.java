@@ -27,6 +27,6 @@ public class LibroEntity {
     private Long anio;
     @Column(name = "GENERO", length = 50)
     private String genero;
-    @Column(name = "ID_AUTOR")
-    private Long id_autor;
+    @Column(name = "AUTOR_ID")
+    private Long autor_id;
 }

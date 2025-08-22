@@ -21,19 +21,9 @@ CREATE TABLE Autores
     fecha_nacimiento DATE
 );
 
-INSERT INTO Autores(nombre, apellido, nacionalidad, fecha_nacimiento) VALUES
-('David', 'Guardado', 'hola', '20/05/2025');
+INSERT INTO Autores(id, nombre, apellido, nacionalidad, fecha_nacimiento) VALUES
+(seq_autor.nextval, 'David', 'Guardado', 'El Salvador', '26/04/2008');
 
 SELECT * FROM Autores;
 
-CREATE OR REPLACE TRIGGER trg_libro
-BEFORE INSERT ON Libros FOR EACH ROW
-BEGIN
-    INSERT INTO Libros (id) VALUES ();
-END;
-
-CREATE OR REPLACE TRIGGER trg_autor 
-BEFORE INSERT ON Autores FOR EACH ROW DECLARE 
-BEGIN
-    INSERT INTO Autores (id) VALUES (seq_autor.NEXTVAL)
-END;
+DELETE FROM Autores;

@@ -20,9 +20,11 @@ public class LibroController {
     @Autowired
     private LibroService service;
 
+    //Consultar los datos
     @GetMapping("/consultar")
     public List<LibroDTO> obtenerLibros() { return service.obtenerLibros(); }
 
+    //Insertar datos
     @PostMapping("/insertar")
     public ResponseEntity<?> insertarLibro(@Valid @RequestBody LibroDTO dto, BindingResult result) {
         if (result.hasErrors()){
@@ -45,7 +47,8 @@ public class LibroController {
         }
     }
 
-    @PutMapping("/actualizar")
+    //Actualizar datos
+    @PutMapping("/actualizar/{id}")
     public ResponseEntity<?> actualizarLibro(@PathVariable Long id,@Valid @RequestBody LibroDTO dto, BindingResult result) {
         if (result.hasErrors()) {
             Map<String, String> errores = new HashMap<>();
@@ -67,9 +70,11 @@ public class LibroController {
         }
     }
 
-    @DeleteMapping("/eliminar")
+    //Eliminar datos
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> eliminarLibro(@PathVariable Long id){
         try{
+            //Si la funcion del service devuelve se mostrara un mensaje de exito, caso contrario mostrara un mensaje de error
             if (service.eliminarLibro(id)){
                 return ResponseEntity.ok(Map.of(
                         "status", "success",

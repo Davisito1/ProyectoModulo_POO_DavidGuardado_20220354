@@ -52,7 +52,7 @@ public class LibroService {
         try{
             LibroEntity existente = repo.findById(id).orElseThrow(() -> new ExceptionLibroNoEncontrado("No se encontro libro con ID: " + id));
 
-            existente.setId_autor(data.getAutor_id());
+            existente.setAutor_id(data.getAutor_id());
             existente.setTitulo(data.getTitulo());
             existente.setIsbn(data.getIsbn());
             existente.setAnio(data.getAnio());
@@ -89,7 +89,7 @@ public class LibroService {
         entity.setIsbn(dto.getIsbn());
         entity.setAnio(dto.getAnio());
         entity.setGenero(dto.getGenero());
-        entity.setId_autor(dto.getAutor_id());
+        entity.setAutor_id(dto.getAutor_id());
         return entity;
     }
 
@@ -100,7 +100,7 @@ public class LibroService {
         dto.setIsbn(entity.getIsbn());
         dto.setAnio(entity.getAnio());
         dto.setGenero(entity.getGenero());
-        dto.setAutor_id(entity.getId_autor());
+        dto.setAutor_id(entity.getAutor_id());
         return dto;
     }
 }
