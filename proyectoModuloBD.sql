@@ -26,4 +26,6 @@ INSERT INTO Autores(id, nombre, apellido, nacionalidad, fecha_nacimiento) VALUES
 
 SELECT * FROM Autores;
 
+SELECT * FROM Libros;
+
 DELETE FROM Autores;
